@@ -48,10 +48,62 @@
                </div>
 
                <div class="trending__item2 trending__item">
-                    <button style="background-image: url(imgs/scroller-img-1.webp);" class="tending__btn-card">
-                        
-                    </button>
+                    <button class="prev">&lt;</button>
+                    <div class="trending-video-carousel">
+                        <div class="trending__card-cont js-card-cont">
+                                                
+                        </div>
+                    </div>
+                    <button class="next">&gt;</button>
                </div>
+            </div>
+        </section>
+
+        <section class="section join">
+            <div class="section-wrapper ">
+                <h2>More Reasons to Join</h2>
+                <div class="join-card-cont">
+                    <section class="join-card">
+                        <h2>Enjoy on your TV</h2>
+                        <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+                        <figure class="join-card__figure">
+                            <img src="imgs/scroller-img-10.webp" alt="">
+                        </figure>
+                    </section>
+                    <section class="join-card">
+                        <h2>Download your shows to watch offline</h2>
+                        <p>Save your favorites easily and always have something to watch.</p>
+                        <figure class="join-card__figure">
+                            <img src="" alt="">
+                        </figure>
+                    </section>
+                    <section class="join-card">
+                        <h2>Watch everywhere</h2>
+                        <p>
+                            Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                        <figure class="join-card__figure">
+                            <img src="" alt="">
+                        </figure>
+                    </section>
+                    <section class="join-card">
+                        <h2>Create profiles for kids</h2>
+                        <p>
+                            Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+                        <figure class="join-card__figure">
+                            <img src="" alt="">
+                        </figure>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="section-wrapper">
+                <details>
+                    <summary>What is Netflix?</summary>
+                    <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+                    <p>You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!</p>
+                </details>
             </div>
         </section>
     </main>
@@ -59,6 +111,99 @@
     <footer class="footer">
 
     </footer>
+    
+    <script>
+        var log = console.log;
+        const cardCont = document.querySelector('.js-card-cont');
+        const buttonCards = document.querySelectorAll('.button-card');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        
 
+        cardData = [
+            {
+                bgImg: `imgs/scroller-img-1.webp`,
+                id: `1`,
+            },
+            {
+                bgImg: `imgs/scroller-img-2.webp`,
+                id: `2`,
+            },
+            {
+                bgImg: `imgs/scroller-img-3.webp`,
+                id: `3`,
+            },
+            {
+                bgImg: `imgs/scroller-img-4.webp`,
+                id: `4`,
+            },
+            {
+                bgImg: `imgs/scroller-img-5.webp`,
+                id: `5`,
+            },
+            {
+                bgImg: `imgs/scroller-img-6.webp`,
+                id: `6`,
+            },
+            {
+                bgImg: `imgs/scroller-img-7.webp`,
+                id: `7`,
+            },
+            {
+                bgImg: `imgs/scroller-img-8.webp`,
+                id: `8`,
+            },
+            {
+                bgImg: `imgs/scroller-img-9.webp`,
+                id: `9`,
+            },
+            {
+                bgImg: `imgs/scroller-img-10.webp`,
+                id: `10`,
+            },
+        ]
+        
+        renderCard();
+        watchCardNavs();
+        function renderCard(){
+            let cardHTML = ``;
+            cardData.forEach(data => {
+                cardHTML += `
+                    <button style="background-image: url(${data.bgImg});" class="js-trending__card tending__btn-card">
+                        <span class="card-number-lable">${data.id}</span>
+                    </button>
+                `;
+            });
+            cardCont.innerHTML = cardHTML;
+        };
+       
+        
+        function watchCardNavs(){
+            window.addEventListener('load', () => {
+                if (cardCont.firstChild.nextSibling.children[0].innerText == 1){
+                    prevButton.style.display = 'none';
+                };
+            });
+        };
+        const trendingCards = document.querySelectorAll('.js-trending__card');
+
+
+
+        
+        // let incremental = 1;
+        // nextButton.addEventListener('click', (e) => {
+        //     next()
+        // })
+        
+        // let visibleCardsInContainer = Math.floor(cardCont.offsetWidth / trendingCards[0].offsetWidth);
+        // function next() {
+
+        //     if (visibleCardsInContainer < trendingCards.length){
+        //         cardCont.style.transform = `translateX(${-((incremental) * 150)}px)`;
+        //         incremental++;
+        //         visibleCardsInContainer++;
+        //     }
+        // }
+    </script>
 </body>
 </html>
