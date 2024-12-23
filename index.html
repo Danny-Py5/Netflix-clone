@@ -6,8 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="discription" content="A clone website of Netflix for educational and practice purposes">
     <title>Netflix - Clone</title>
+
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    
+    <header class="header">
+        <section class="header__wraper center-flex center-flex--space-between section-wrapper">
+            <h2 class="header__h2">Netflix</h2>
+            <button class="header__button">Sign In</button>
+        </section>
+    </header>
+
+    <section class="hero section">
+        <section class="section-wrapper hero__section">
+            <h1 class="hero__h1">Unlimited movies, TV shows, and more</h1>
+            <p>Starts at ₦2,200. Cancel anytime.</p>
+            <p>Ready to watch? Enter your email to create or restart your membership.
+            </p>
+            <form class="hero__form center-flex flex-column" action="">
+                <input type="email" name="email" id="email" placeholder="Email address">
+                <button type="submit">Get started &gt;</button>
+            </form>
+        </section>
+        <div class="hero__divider"></div>
+    </section>
+
+    <main class="main">
+        <section class="trending">
+            <div class="section-wrapper trending__wrapper">
+               <div class="trending__item trending__item1 center-flex flex-column">
+                    <h2>Trending Now</h2>
+                    <select name="video-region" id="">
+                        <option value="nigeria">Nigeria</option>
+                        <option value="global">Global</option>
+                    </select>
+
+                    <select name="video-type" id="">
+                        <option value="moview">Movies</option>
+                        <option value="tv-shows">TV Shows</option>
+                    </select>
+               </div>
+
+               <div class="trending__item2 trending__item">
+                    <button style="background-image: url(imgs/scroller-img-1.webp);" class="tending__btn-card">
+                        
+                    </button>
+               </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+
 </body>
 </html>
