@@ -53,6 +53,7 @@ body{
     min-height: 100vh;
     padding-bottom: 50rem;
 }
+/* general styles */
 h1, h2, h3, h4, h5{
     color: var(--color);
 }
@@ -68,17 +69,67 @@ p, li{
     line-height: 1.5rem;
     margin-bottom: 1rem;
 }
-p, a, li{
+p, a, li, label{
     font-size: var(--font-size); 
     color: var(--color);
-    transition: color var(--transition-duration);
+    transition: color var(--transition-duration) ;
     color: var(--color-primary);
+}
+label{
+    transition: opacity, transform, font-size var(--transition-duration);
 }
 a{
     text-decoration: none;
 }
 ul{
     list-style-type: none;
+}
+.input-container{
+    /* background-color: #fff; */
+    position: relative;
+    justify-self: stretch;
+    align-self: stretch;
+}
+.input-container label{
+    position: absolute;
+    left: 1rem;
+    top:  50%;
+    transform: translateY(-50%);
+}
+.warning{
+    display: none;
+    align-self: flex-start;
+    font-size: 14px;
+    color: red;
+}
+
+input{
+    padding: 1rem;
+    width: 100%;
+    background-color: #00000000;
+    border: 1px solid var(--color-primary);
+    font: inherit;
+    color: var(--white);
+    border-radius: var(--border-radius-secondary);
+}
+input:focus,
+input:focus{
+    outline: none;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label{ 
+    transform: translateY(-27px);
+    font-size: small;
+    font-weight: 700;
+    opacity: .889;
+}
+/* Show the warning when the input is invalid */
+.input-container:has(input:invalid:focus-visible) + .warning{
+    display: block;
+}
+input:valid{
+    border-color: green;
 }
 a:hover{
     color: var(--primary-color);
@@ -140,6 +191,7 @@ span{
     max-width: var(--wrapper-max-width);
     margin: auto;
 }
+
 .header{
     position: absolute;
     top: 0;
@@ -191,18 +243,7 @@ span{
     row-gap: var(--gap);
     padding: .6rem 0;
 }
-.hero__form input[type='email']{
-    padding: 1rem;
-    width: 100%;
-    background-color: #00000000;
-    border: 1px solid var(--color-primary);
-    font: inherit;
-    color: inherit;
-    border-radius: var(--border-radius-secondary);
-}
-.hero__form input[type='email']:focus{
-    outline: none;
-}
+
 
 .hero__divider{
     height: 70px;
@@ -342,6 +383,14 @@ span{
     font-size: 2.4rem;
     font-weight: unset;
 }
+
+.faq__form{
+    padding-top: var(--section-padding-top);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
 
 @media (min-width: 890px) {
     .join-card-cont{

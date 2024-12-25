@@ -8,6 +8,8 @@
     <title>Netflix - Clone</title>
 
     <link rel="stylesheet" href="styles/index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -24,8 +26,12 @@
             <p>Ready to watch? Enter your email to create or restart your membership.
             </p>
             <form class="hero__form center-flex flex-column" action="">
-                <input type="email" name="email" id="email" placeholder="Email address">
-                <button type="submit">Get started &gt;</button>
+                <div class="input-container">
+                    <input type="email" name="email" required placeholder=" " id="email" >
+                    <label for="email">Email address</label>
+                </div>
+                <p class="warning">Please input a correct email address</p>
+                <button type="submit" class="center-flex" >Get Started <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path></svg></button>
             </form>
         </section>
         <div class="hero__divider"></div>
@@ -48,13 +54,13 @@
                </div>
 
                <div class="trending__item2 trending__item">
-                    <button class="prev">&lt;</button>
+                    <button class="prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronLeftStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.41409 12L15.707 19.2928L14.2928 20.7071L6.29277 12.7071C6.10523 12.5195 5.99988 12.2652 5.99988 12C5.99988 11.7347 6.10523 11.4804 6.29277 11.2928L14.2928 3.29285L15.707 4.70706L8.41409 12Z" fill="currentColor"></path></svg></button>
                     <div class="trending-video-carousel">
                         <div class="trending__card-cont js-card-cont">
                                                 
                         </div>
                     </div>
-                    <button class="next">&gt;</button>
+                    <button class="next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path></svg></button>
                </div>
             </div>
         </section>
@@ -191,14 +197,59 @@
                     </div>
                     
                 </div>
+
+                <form action="" class="faq__form">
+                    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                    <div class="input-container">
+                        <input type="email" required name="email" id="email" placeholder=" ">
+                        <label for="email">Email address</label>
+                    </div>
+                    <p class="warning">Please input a valid email address</p>
+                    <button style="align-self: flex-start" class="center-flex" >Get Started <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path></svg></button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer section">
+        <div class="section-wrapper">
+            <a href="">Questions? Contact us</a>
+            <div class="footer__link-cont">
+                <ul class="foter__ul">
+                    <li><a class="footer__a" href="">Faq</a></li>
+                    <li><a class="footer__a" href="">Medical Center</a></li>
+                    <li><a class="footer__a" href="">Ways to Watch</a></li>
+                    <li><a class="footer__a" href="">Cookies Preferences</a></li>
+                    <li><a class="footer__a" href="">Speed Test</a></li>
+                </ul>
+            </div>
 
+            <div class="footer__link-cont">
+                <ul class="foter__ul">
+                    <li><a class="footer__a" href="">Help Center</a></li>
+                    <li><a class="footer__a" href="">Medical Relations</a></li>
+                    <li><a class="footer__a" href="">Terms of Use</a></li>
+                    <li><a class="footer__a" href="">Corporate Information</a></li>
+                    <li><a class="footer__a" href="">Legal Notices</a></li>
+                </ul>
+            </div>
+            <div class="footer__link-cont">
+                <ul class="foter__ul">
+                    <li><a class="footer__a" href="">Account</a></li>
+                    <li><a class="footer__a" href="">Jobs</a></li>
+                    <li><a class="footer__a" href="">Privacy</a></li>
+                    <li><a class="footer__a" href="">Contact Us</a></li>
+                    <li><a class="footer__a" href="">Only on Netflix</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <i class="fas fa-language"></i>
+            <select name="lang-selection" id="land-selection">
+                <option value="en">English</option>
+            </select>
+        </div>
     </footer>
-    
     <script src="index.js"></script>
 </body>
 </html>
