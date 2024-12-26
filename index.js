@@ -7,14 +7,7 @@ const positionSticky = document.querySelector('.position-sticky');
 
 // card variables;
 let currentCardContScrollPosition = cardContElement.scrollLeft;
-let cardContainerWidth = undefined;
 let cardContElementItemWidth = undefined;
-let currentCardContainerItems = undefined;
-const totalCardItems = 10;
-
-let clickRemainNext = undefined;
-let clickRemainPrev = undefined;
-
 
 
 cardData = [
@@ -80,12 +73,8 @@ function onloadSetups(){
         if (cardContElement.firstChild.nextSibling.children[0].innerText == 1){
             prevButton.style.display = 'none';
         };
-        cardContainerWidth = cardContElement.offsetWidth;
         cardContElementItems = document.querySelectorAll('.tending__btn-card');
         cardContElementItemWidth = cardContElementItems[0].offsetWidth;
-        currentCardContainerItems = Math.floor(cardContainerWidth / cardContElementItemWidth);
-        clickRemainNext = totalCardItems - currentCardContainerItems;
-        
     });
 };
 
@@ -141,17 +130,14 @@ function clearAnimation(oppositeClass) {
 }
 
 function scrollCards(clickedButton) {
-    clickRemainNext--;
     if (clickedButton == 'next'){
         cardContElement.scrollLeft = currentCardContScrollPosition + cardContElementItemWidth;
-        // update currentCardContScrollPosition;
         currentCardContScrollPosition = cardContElement.scrollLeft;
         // show the prev button
         prevButton.style.display = 'inline-block'
 
     } else {
         cardContElement.scrollLeft = currentCardContScrollPosition - cardContElementItemWidth;
-        // update currentCardContScrollPosition;
         currentCardContScrollPosition = cardContElement.scrollLeft;
     }
 
@@ -182,11 +168,8 @@ window.addEventListener('scroll', (e) => {
 });
 window.addEventListener('resize', (e) => {
     // update the cardContainer's width on window resize
-    cardContainerWidth = cardContElement.offsetWidth;
+
     cardContElementItemWidth = cardContElementItems[0].offsetWidth;
-    currentCardContainerItems = Math.floor(cardContainerWidth / cardContElementItemWidth);
-    clickRemainNext = totalCardItems - currentCardContainerItems;
-    log(currentCardContainerItems)
 });
 
 
