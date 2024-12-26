@@ -50,8 +50,7 @@ html{
 body{
     color: var(--color-primary);
     background-color: var(--bg-color);
-    min-height: 100vh;
-    padding-bottom: 50rem;
+
 }
 /* general styles */
 h1, h2, h3, h4, h5{
@@ -383,6 +382,15 @@ span{
     font-size: 2.4rem;
     font-weight: unset;
 }
+.faq__input-wrapper{
+    display: flex;
+    align-self: stretch;
+    gap: var(--gap);
+    flex-direction: column;
+}
+.faq__input-container-wrapper{
+    flex: 1;
+}
 
 .faq__form{
     padding-top: var(--section-padding-top);
@@ -390,13 +398,68 @@ span{
     flex-direction: column;
     gap: var(--gap);
 }
+.faq__form .faq__button{
+    align-self: flex-start;
+    justify-self: center;
+    margin-top: 3px;
+}
 
+
+/* footer */
+.footer{
+    
+}
+.footer__a{
+    font-size: 1rem;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.footer p{
+    font-size: 1rem;
+}
+.footer__link-cont:nth-child(4){
+    margin-bottom: 54px;
+}
+.footer__lang-selection-wrapper{
+    position: relative;
+    margin: 3rem 0 2rem;
+}
+.footer__lang-select{
+    padding: .5rem calc(var(--padding) * 2);
+    border-radius: var(--border-radius-secondary);
+    background-color:#00000000;
+    color: inherit;
+
+}
+.footer .fas{
+    position: absolute;
+    top: 50%;
+    left: .5rem;
+    transform: translateY(-50%);
+    margin-right: .5rem;
+}
 
 @media (min-width: 890px) {
     .join-card-cont{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--gap);
+    }
+    .faq__form{
+        justify-content: center;
+        align-items: center;
+    }
+    .faq__button{
+        align-self: stretch;
+    }
+}
+@media (min-width: 700px) {
+    .faq__input-wrapper{
+        flex-direction: row;
+    }
+    .footer__link-wrapper{
+        display: flex;
+        justify-content: space-between;
     }
 }
 

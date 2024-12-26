@@ -28,7 +28,7 @@
             <form class="hero__form center-flex flex-column" action="">
                 <div class="input-container">
                     <input type="email" name="email" required placeholder=" " id="email" >
-                    <label for="email">Email address</label>
+                    <label  for="email">Email address</label>
                 </div>
                 <p class="warning">Please input a correct email address</p>
                 <button type="submit" class="center-flex" >Get Started <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path></svg></button>
@@ -200,54 +200,61 @@
 
                 <form action="" class="faq__form">
                     <p>Ready to watch? Enter your email to create or restart your membership.</p>
-                    <div class="input-container">
-                        <input type="email" required name="email" id="email" placeholder=" ">
-                        <label for="email">Email address</label>
+                    <div class="faq__input-wrapper">
+                        <div class="faq__input-container-wrapper">
+                            <div class="input-container">
+                                <input type="email" required name="email" id="email" placeholder=" ">
+                                <label for="email">Email address</label>
+                            </div> 
+                            <p class="warning">Please input a valid email address</p>
+                        </div>
+                        <button  class="center-flex faq__button" >Get Started <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path></svg></button>
                     </div>
-                    <p class="warning">Please input a valid email address</p>
-                    <button style="align-self: flex-start" class="center-flex" >Get Started <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path></svg></button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer section">
-        <div class="section-wrapper">
-            <a href="">Questions? Contact us</a>
-            <div class="footer__link-cont">
-                <ul class="foter__ul">
-                    <li><a class="footer__a" href="">Faq</a></li>
-                    <li><a class="footer__a" href="">Medical Center</a></li>
-                    <li><a class="footer__a" href="">Ways to Watch</a></li>
-                    <li><a class="footer__a" href="">Cookies Preferences</a></li>
-                    <li><a class="footer__a" href="">Speed Test</a></li>
-                </ul>
+        <div class="section-wrapper footer__wrapper">
+            <h2><a class="footer__a" href="">Questions? Contact us</a></h2>
+            <div class="footer__link-wrapper">
+                <div class="footer__link-cont">
+                    <ul class="foter__ul">
+                        <li><a class="footer__a" href="">Faq</a></li>
+                        <li><a class="footer__a" href="">Medical Center</a></li>
+                        <li><a class="footer__a" href="">Ways to Watch</a></li>
+                        <li><a class="footer__a" href="">Cookies Preferences</a></li>
+                        <li><a class="footer__a" href="">Speed Test</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer__link-cont">
+                    <ul class="foter__ul">
+                        <li><a class="footer__a" href="">Help Center</a></li>
+                        <li><a class="footer__a" href="">Medical Relations</a></li>
+                        <li><a class="footer__a" href="">Terms of Use</a></li>
+                        <li><a class="footer__a" href="">Corporate Information</a></li>
+                        <li><a class="footer__a" href="">Legal Notices</a></li>
+                    </ul>
+                </div>
+                <div class="footer__link-cont">
+                    <ul class="foter__ul">
+                        <li><a class="footer__a" href="">Account</a></li>
+                        <li><a class="footer__a" href="">Jobs</a></li>
+                        <li><a class="footer__a" href="">Privacy</a></li>
+                        <li><a class="footer__a" href="">Contact Us</a></li>
+                        <li><a class="footer__a" href="">Only on Netflix</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="footer__link-cont">
-                <ul class="foter__ul">
-                    <li><a class="footer__a" href="">Help Center</a></li>
-                    <li><a class="footer__a" href="">Medical Relations</a></li>
-                    <li><a class="footer__a" href="">Terms of Use</a></li>
-                    <li><a class="footer__a" href="">Corporate Information</a></li>
-                    <li><a class="footer__a" href="">Legal Notices</a></li>
-                </ul>
+            <div class="footer__lang-selection-wrapper">
+                <i  class="fas fa-language"></i>
+                <select class="footer__lang-select" name="lang-selection" id="land-selection">
+                    <option value="en">English</option>
+                </select>
             </div>
-            <div class="footer__link-cont">
-                <ul class="foter__ul">
-                    <li><a class="footer__a" href="">Account</a></li>
-                    <li><a class="footer__a" href="">Jobs</a></li>
-                    <li><a class="footer__a" href="">Privacy</a></li>
-                    <li><a class="footer__a" href="">Contact Us</a></li>
-                    <li><a class="footer__a" href="">Only on Netflix</a></li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <i class="fas fa-language"></i>
-            <select name="lang-selection" id="land-selection">
-                <option value="en">English</option>
-            </select>
+            <p>Netflix Nigeria</p>
         </div>
     </footer>
     <script src="index.js"></script>
