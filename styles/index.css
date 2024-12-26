@@ -305,13 +305,17 @@ span{
 .trending-video-carousel{
     /* background-color: red; */
     overflow: hidden;
-    padding-left: 1rem
+    /* padding-left: 1rem; */
 }
 .trending__card-cont{
     display: flex;
     column-gap: var(--gap);
     flex: 1;
-    /* transform: translateX(); */
+    /* transform: translateX(260); */
+    overflow: hidden;
+}
+.trending__card-cont::-webkit-scrollbar{
+    display: none;
 }
 .tending__btn-card{
     height: min(100vw, 170px);

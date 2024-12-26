@@ -1,9 +1,20 @@
 var log = console.log;
-const cardCont = document.querySelector('.js-card-cont');
-const buttonCards = document.querySelectorAll('.button-card');
+const cardContElement = document.querySelector('.js-card-cont');
+let  cardContElementItems = undefined;
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
-const positionSticky = document.querySelector('.position-sticky')
+const positionSticky = document.querySelector('.position-sticky');
+
+// card variables;
+let currentCardContScrollPosition = cardContElement.scrollLeft;
+let cardContainerWidth = undefined;
+let cardContElementItemWidth = undefined;
+let currentCardContainerItems = undefined;
+const totalCardItems = 10;
+
+let clickRemainNext = undefined;
+let clickRemainPrev = undefined;
+
 
 
 cardData = [
@@ -50,7 +61,7 @@ cardData = [
 ]
 
 renderCard();
-watchCardNavs();
+onloadSetups();
 function renderCard(){
     let cardHTML = ``;
     cardData.forEach(data => {
@@ -60,15 +71,21 @@ function renderCard(){
             </button>
         `;
     });
-    cardCont.innerHTML = cardHTML;
+    cardContElement.innerHTML = cardHTML;
 };
 
 
-function watchCardNavs(){
+function onloadSetups(){
     window.addEventListener('load', () => {
-        if (cardCont.firstChild.nextSibling.children[0].innerText == 1){
+        if (cardContElement.firstChild.nextSibling.children[0].innerText == 1){
             prevButton.style.display = 'none';
         };
+        cardContainerWidth = cardContElement.offsetWidth;
+        cardContElementItems = document.querySelectorAll('.tending__btn-card');
+        cardContElementItemWidth = cardContElementItems[0].offsetWidth;
+        currentCardContainerItems = Math.floor(cardContainerWidth / cardContElementItemWidth);
+        clickRemainNext = totalCardItems - currentCardContainerItems;
+        
     });
 };
 
@@ -123,6 +140,31 @@ function clearAnimation(oppositeClass) {
     }, animationDuration); 
 }
 
+function scrollCards(clickedButton) {
+    clickRemainNext--;
+    if (clickedButton == 'next'){
+        cardContElement.scrollLeft = currentCardContScrollPosition + cardContElementItemWidth;
+        // update currentCardContScrollPosition;
+        currentCardContScrollPosition = cardContElement.scrollLeft;
+        // show the prev button
+        prevButton.style.display = 'inline-block'
+
+    } else {
+        cardContElement.scrollLeft = currentCardContScrollPosition - cardContElementItemWidth;
+        // update currentCardContScrollPosition;
+        currentCardContScrollPosition = cardContElement.scrollLeft;
+    }
+
+    // cardContElement.scrollLeft = cardContainerWidth * increament;
+}
+
+nextButton.addEventListener('click', ()=> {
+    scrollCards('next');
+});
+prevButton.addEventListener('click', () => {
+    scrollCards('prev');
+})
+
 document.querySelectorAll('.faq__expand-btn').forEach(button => {
     button.addEventListener('click', (e) => {
         handleQuestions(button);        
@@ -134,8 +176,17 @@ document.querySelectorAll('.question__wrapper').forEach(question => {
     });
 });
 
+// window events
 window.addEventListener('scroll', (e) => {
     hideShowPositonSticky()
+});
+window.addEventListener('resize', (e) => {
+    // update the cardContainer's width on window resize
+    cardContainerWidth = cardContElement.offsetWidth;
+    cardContElementItemWidth = cardContElementItems[0].offsetWidth;
+    currentCardContainerItems = Math.floor(cardContainerWidth / cardContElementItemWidth);
+    clickRemainNext = totalCardItems - currentCardContainerItems;
+    log(currentCardContainerItems)
 });
 
 
