@@ -3,6 +3,7 @@ const cardCont = document.querySelector('.js-card-cont');
 const buttonCards = document.querySelectorAll('.button-card');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
+const positionSticky = document.querySelector('.position-sticky')
 
 
 cardData = [
@@ -90,6 +91,36 @@ function handleQuestions(element){
         ? element.firstChild.nextElementSibling.children[1].innerText = '+'
         : element.innerText = '+';
     }
+};
+
+let isScrolling = undefined;
+let scrolledTime = 0;
+let lastScroll = 0;
+const animationDuration = 205; //currelates with animation duration in css
+function hideShowPositonSticky() {
+    clearTimeout(isScrolling);
+
+    isScrolling = setTimeout(() => {
+        scrolledTime++;
+        if (scrolledTime == 2){
+            scrolledTime = 0;
+            let currentScroll = document.documentElement.scrollTop;
+            if (lastScroll > currentScroll){
+                positionSticky.classList.add('slideInShow');
+                clearAnimation('slideOutHide'); // remove opposite classd 
+            } else {
+                positionSticky.classList.add('slideOutHide');
+                clearAnimation('slideInShow');
+            };
+        };
+        lastScroll = document.documentElement.scrollTop; 
+    }, 100);
+};
+
+function clearAnimation(oppositeClass) {
+    setTimeout(() => {
+        positionSticky.classList.remove(oppositeClass)
+    }, animationDuration); 
 }
 
 document.querySelectorAll('.faq__expand-btn').forEach(button => {
@@ -102,5 +133,12 @@ document.querySelectorAll('.question__wrapper').forEach(question => {
         handleQuestions(question);        
     });
 });
+
+window.addEventListener('scroll', (e) => {
+    hideShowPositonSticky()
+});
+
+
+
 
 

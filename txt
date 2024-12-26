@@ -1,1 +1,25 @@
- txt
+// The algorithm to scroll the card on on next or prev button cliked
+
+container_width = 300
+each_card_width = 100
+totoal_items = 10
+items_present_now = 3
+
+// there fore , button must be clicked 7 more times to the right and 3 more times to the left.
+
+// stpe by step to accomplish this task 
+1. get the container_width and the width of a card 
+2. get the totoal_items (card)
+3. get the items present in the container now using 
+   the length of the container divided by the length of a card 
+4. set a var to track how many more times remain to click the next and prv button to stop scrolling when the card are scrolled to the last or to the very beginning. 
+
+assume items_present_now = 3, the remain times for the next button to be clicked is just 7 and the next times remain for the prev button to be clicked is just 3.
+
+Now, how to track
+-----------------
+if the next button is clicked, the number of times remain should be deducted by 1 and the number of times remaining for the prev button to be clicked should be increased by 1 to. 
+
+hmmmm: what is the window is resized? 
+--------------------------------------
+add and eventListener to the window and update the value of all the variables set again 

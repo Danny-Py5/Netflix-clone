@@ -27,7 +27,7 @@
     --wrapper-max-width: 1200px;
     /* transition and animation */
     --transition-duration: .25s;
-    --animation-duration: .5s;
+    --animation-duration: .3s;
 
     /* gap */
     --row-gap: 32px;
@@ -406,9 +406,6 @@ span{
 
 
 /* footer */
-.footer{
-    
-}
 .footer__a{
     font-size: 1rem;
     text-decoration: underline;
@@ -439,6 +436,44 @@ span{
     margin-right: .5rem;
 }
 
+.position-sticky{
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-content: center;
+    justify-content: stretch;
+    background-color: hsla(0, 0%, 0%, 0);
+}
+.position-sticky button{
+    box-shadow: 0 -10px 60px 30px rgb(0, 0, 0);
+    outline: .5rem solid var(--bg-color);
+}
+.slideInShow{
+    animation: slideInShow var(--animation-duration) ease-out both;
+}
+.slideOutHide{
+    animation: slideOutHide var(--animation-duration) ease-out both;
+}
+
+@keyframes slideInShow {
+    from {
+        bottom: -100px;
+    }
+    to {
+        bottom: .5rem;
+    }
+}
+
+@keyframes slideOutHide {
+    from {
+        bottom: .5rem;
+    }
+    to {
+        bottom: -100px;
+    }
+}
 @media (min-width: 890px) {
     .join-card-cont{
         display: grid;
